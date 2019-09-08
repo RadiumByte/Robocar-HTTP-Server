@@ -3,22 +3,19 @@ package api
 import (
 	"fmt"
 
-	"github.com/RadiumByte/Robot-Server/cmd/web/app"
+	"github.com/RadiumByte/Robocar-HTTP-Server/cmd/web/app"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/valyala/fasthttp"
 )
 
-// WebServer is providing foreign access to the Robot Server
+// WebServer is providing foreign access to the Robocar
 type WebServer struct {
-	application app.RobotServer
+	application app.RobocarServer
 }
 
 // ProcessCommand pushes new Command to Application for processing
 func (server *WebServer) PushCommand(ctx *fasthttp.RequestCtx) {
 	commandStr := ctx.UserValue("command").(string)
-
-	//fmt.Println("Server received command: " + commandStr)
-
 	server.application.ProcessCommand(commandStr)
 }
 

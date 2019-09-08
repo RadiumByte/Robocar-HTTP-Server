@@ -3,16 +3,15 @@ package main
 import (
 	"fmt"
 
-	"github.com/RadiumByte/Robot-Server/cmd/web/api"
-	"github.com/RadiumByte/Robot-Server/cmd/web/app"
-	"github.com/RadiumByte/Robot-Server/cmd/web/ral"
+	"github.com/RadiumByte/Robocar-HTTP-Server/cmd/web/api"
+	"github.com/RadiumByte/Robocar-HTTP-Server/cmd/web/app"
+	"github.com/RadiumByte/Robocar-HTTP-Server/cmd/web/ral"
 )
 
 func main() {
-	CarIP := "192.168.1.50"
 	Port := ":8080"
 
-	robot, err := ral.NewRoboCar(CarIP, Port)
+	robot, err := ral.NewRoboCar()
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("Robot connection failure - program stopped")
