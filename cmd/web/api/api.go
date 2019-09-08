@@ -21,8 +21,6 @@ func (server *WebServer) PushCommand(ctx *fasthttp.RequestCtx) {
 
 // Start initializes Web Server, starts application and begins serving
 func (server *WebServer) Start(port string) {
-	server.application.Start()
-
 	router := fasthttprouter.New()
 	router.PUT("/:command", server.PushCommand)
 
@@ -31,7 +29,7 @@ func (server *WebServer) Start(port string) {
 }
 
 // NewWebServer constructs Web Server
-func NewWebServer(application app.RobotServer) (*WebServer, error) {
+func NewWebServer(application app.RobocarServer) (*WebServer, error) {
 	res := &WebServer{}
 	res.application = application
 
