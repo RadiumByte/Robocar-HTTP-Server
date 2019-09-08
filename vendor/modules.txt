@@ -1,0 +1,14 @@
+# github.com/buaazp/fasthttprouter v0.1.1
+github.com/buaazp/fasthttprouter
+# github.com/klauspost/compress v1.4.0
+github.com/klauspost/compress/flate
+github.com/klauspost/compress/gzip
+github.com/klauspost/compress/zlib
+# github.com/klauspost/cpuid v0.0.0-20180405133222-e7e905edc00e
+github.com/klauspost/cpuid
+# github.com/valyala/bytebufferpool v0.0.0-20160817181652-e746df99fe4a
+github.com/valyala/bytebufferpool
+# github.com/valyala/fasthttp v0.0.0-20180831062205-5f6439b6df1c
+github.com/valyala/fasthttp
+github.com/valyala/fasthttp/fasthttputil
+github.com/valyala/fasthttp/stackless
