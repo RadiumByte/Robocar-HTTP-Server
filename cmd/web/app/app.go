@@ -12,11 +12,16 @@ type RobotAccessLayer interface {
 
 // Application is responsible for all logics and communicates with other layers
 type Application struct {
-	Robot RobotAccessLayer
+	Robot   RobotAccessLayer
+	isFirst bool
 }
 
 // ProcessCommand parses command and determines what to do with it
 func (app *Application) ProcessCommand(command string) {
+	if app.isFirst {
+		app.Robot.SendCommand("CONNSERV")
+		app.isFirst = false
+	}
 	app.Robot.SendCommand(command)
 }
 
@@ -24,6 +29,7 @@ func (app *Application) ProcessCommand(command string) {
 func NewApplication(robot RobotAccessLayer) (*Application, error) {
 	res := &Application{}
 	res.Robot = robot
+	res.isFirst = true
 
 	return res, nil
 }
